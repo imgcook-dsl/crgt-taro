@@ -1,7 +1,6 @@
-'use strict';
-
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+import Taro, { Component } from '@tarojs/taro';
+import { View, Image, Text } from '@tarojs/components';
+import transfromPX from '@utils/transfromPX';
 
 {{{utils}}}
 

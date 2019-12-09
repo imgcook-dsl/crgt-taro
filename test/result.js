@@ -1,36 +1,55 @@
 'use strict';
 
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+import Taro, { Component } from '@tarojs/taro';
+import { View, Image, Text } from '@tarojs/components';
+import transfromPX from '@utils/transfromPX';
 
 var styles = {
-  layer: { position: 'absolute', top: '0px', left: '0px', width: '342px', height: '342px', overflow: 'hidden' },
-  bg: { position: 'absolute', top: '0px', left: '0px', opacity: '1.00', width: '342px', height: '342px' },
-  riverdinwei: { opacity: '1.00', width: '14px', height: '18px' },
+  layer: {
+    position: 'absolute',
+    top: transfromPX(0),
+    left: transfromPX(0),
+    width: transfromPX(342),
+    height: transfromPX(342),
+    overflow: 'hidden'
+  },
+  bg: {
+    position: 'absolute',
+    top: transfromPX(0),
+    left: transfromPX(0),
+    opacity: '1.00',
+    width: transfromPX(342),
+    height: transfromPX(342)
+  },
+  riverdinwei: {
+    opacity: '1.00',
+    width: transfromPX(14),
+    height: transfromPX(18)
+  },
   distance: {
-    marginLeft: '4px',
-    width: '84px',
-    height: '22px',
-    lineHeight: '22px',
-    whiteSpace: 'nowrap',
+    marginLeft: transfromPX(4),
+    width: transfromPX(84),
+    height: transfromPX(22),
+    lineHeight: transfromPX(22),
+    ...(process.env.TARO_ENV === 'rn' ? { whiteSpace: 'nowrap' } : null),
     color: '#ffffff',
-    fontSize: '18px',
-    fontWeight: 400,
-    lines: 1
+    fontSize: transfromPX(18),
+    fontWeight: '400',
+    lines: '1'
   },
   wrap: {
-    boxSizing: 'border-box',
+    ...(process.env.TARO_ENV === 'rn' ? { boxSizing: 'border-box' } : null),
     display: 'flex',
     position: 'relative',
     alignItems: 'center',
     flexDirection: 'row',
-    marginTop: '18px',
-    marginLeft: '18px',
-    borderRadius: '15px',
+    marginTop: transfromPX(18),
+    marginLeft: transfromPX(18),
+    borderRadius: transfromPX(15),
     backgroundColor: 'rgba(0,0,0,0.40)',
-    paddingRight: '9px',
-    paddingLeft: '10px',
-    height: '30px'
+    paddingRight: transfromPX(9),
+    paddingLeft: transfromPX(10),
+    height: transfromPX(30)
   },
   bd: {
     display: 'flex',
@@ -38,20 +57,20 @@ var styles = {
     alignItems: 'flex-start',
     flexDirection: 'row',
     opacity: '1.00',
-    width: '342px',
-    height: '342px'
+    width: transfromPX(342),
+    height: transfromPX(342)
   },
   title: {
-    marginTop: '22px',
-    width: '300px',
-    height: '88px',
+    marginTop: transfromPX(22),
+    width: transfromPX(300),
+    height: transfromPX(88),
     overflow: 'hidden',
-    textOverflow: 'ellipsis',
-    lineHeight: '44px',
+    ...(process.env.TARO_ENV === 'rn' ? { textOverflow: 'ellipsis' } : null),
+    lineHeight: transfromPX(44),
     color: '#333333',
-    fontSize: '30px',
-    fontWeight: 400,
-    lines: 2
+    fontSize: transfromPX(30),
+    fontWeight: '400',
+    lines: '2'
   },
   main: {
     display: 'flex',
@@ -59,48 +78,58 @@ var styles = {
     flexDirection: 'row',
     justifyContent: 'center',
     backgroundColor: '#ffffff',
-    width: '342px',
-    height: '114px'
+    width: transfromPX(342),
+    height: transfromPX(114)
   },
-  xianjin: { width: '30px', height: '30px' },
+  xianjin: { width: transfromPX(30), height: transfromPX(30) },
   fashionHome: {
-    marginLeft: '6px',
-    width: '96px',
-    height: '28px',
-    lineHeight: '28px',
-    whiteSpace: 'nowrap',
+    marginLeft: transfromPX(6),
+    width: transfromPX(96),
+    height: transfromPX(28),
+    lineHeight: transfromPX(28),
+    ...(process.env.TARO_ENV === 'rn' ? { whiteSpace: 'nowrap' } : null),
     color: '#666666',
-    fontSize: '24px',
-    fontWeight: 300,
-    lines: 1
+    fontSize: transfromPX(24),
+    fontWeight: '300',
+    lines: '1'
   },
-  block: { display: 'flex', alignItems: 'center', flexDirection: 'row', height: '30px' },
-  favorite: { width: '22px', height: '22px' },
+  block: {
+    display: 'flex',
+    alignItems: 'center',
+    flexDirection: 'row',
+    height: transfromPX(30)
+  },
+  favorite: { width: transfromPX(22), height: transfromPX(22) },
   num: {
-    marginLeft: '5px',
-    width: '36px',
-    height: '26px',
-    lineHeight: '26px',
-    whiteSpace: 'nowrap',
+    marginLeft: transfromPX(5),
+    width: transfromPX(36),
+    height: transfromPX(26),
+    lineHeight: transfromPX(26),
+    ...(process.env.TARO_ENV === 'rn' ? { whiteSpace: 'nowrap' } : null),
     color: '#999999',
-    fontSize: '22px',
-    fontWeight: 400,
-    lines: 1
+    fontSize: transfromPX(22),
+    fontWeight: '400',
+    lines: '1'
   },
-  group: { display: 'flex', alignItems: 'center', flexDirection: 'row', height: '30px' },
+  group: {
+    display: 'flex',
+    alignItems: 'center',
+    flexDirection: 'row',
+    height: transfromPX(30)
+  },
   ft: {
-    boxSizing: 'border-box',
+    ...(process.env.TARO_ENV === 'rn' ? { boxSizing: 'border-box' } : null),
     display: 'flex',
     alignItems: 'center',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    borderBottomLeftRadius: '12px',
-    borderBottomRightRadius: '12px',
+    borderBottomLeftRadius: transfromPX(12),
+    borderBottomRightRadius: transfromPX(12),
     backgroundColor: '#ffffff',
-    paddingRight: '17px',
-    paddingLeft: '18px',
-    width: '342px',
-    height: '78px',
+    paddingRight: transfromPX(17),
+    paddingLeft: transfromPX(18),
+    width: transfromPX(342),
+    height: transfromPX(78),
     overflow: 'hidden'
   },
   box: {
@@ -108,43 +137,60 @@ var styles = {
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'flex-start',
-    height: '534px'
+    height: transfromPX(534)
   }
 };
 
 class Mod extends Component {
   render() {
     return (
-      <div style={styles.box}>
-        <div>
-          <div style={styles.bd}>
-            <img style={styles.layer} src={'https://img.alicdn.com/tfs/TB1bLoWoYH1gK0jSZFwXXc7aXXa-684-684.png'} />
-            <img style={styles.bg} src={this.item.coverImage} />
-            <div style={styles.wrap}>
-              <img
+      <View style={styles.box}>
+        <View>
+          <View style={styles.bd}>
+            <Image
+              style={styles.layer}
+              src={
+                'https://img.alicdn.com/tfs/TB1bLoWoYH1gK0jSZFwXXc7aXXa-684-684.png'
+              }
+            />
+            <Image style={styles.bg} src={this.item.coverImage} />
+            <View style={styles.wrap}>
+              <Image
                 style={styles.riverdinwei}
-                src={'https://img.alicdn.com/tfs/TB1mtZRoVT7gK0jSZFpXXaTkpXa-28-36.png'}
+                src={
+                  'https://img.alicdn.com/tfs/TB1mtZRoVT7gK0jSZFpXXaTkpXa-28-36.png'
+                }
               />
-              <span style={styles.distance}>距离500m</span>
-            </div>
-          </div>
-          <div style={styles.main}>
-            <span style={styles.title}>{this.item.title}</span>
-          </div>
-          <div style={styles.ft}>
-            <div style={styles.block}>
-              <img style={styles.xianjin} src={'https://img.alicdn.com/tfs/TB1OvsYoW61gK0jSZFlXXXDKFXa-60-60.png'} />
-              <span style={styles.fashionHome}>{this.item.user.userName}</span>
-            </div>
-            <div style={styles.group}>
-              <img style={styles.favorite} src={'https://img.alicdn.com/tfs/TB1arwYo7T2gK0jSZFkXXcIQFXa-46-44.png'} />
-              <span style={styles.num}>{this.item.readCount}</span>
-            </div>
-          </div>
-        </div>
-      </div>
+              <Text style={styles.distance}>距离500m</Text>
+            </View>
+          </View>
+          <View style={styles.main}>
+            <Text style={styles.title}>{this.item.title}</Text>
+          </View>
+          <View style={styles.ft}>
+            <View style={styles.block}>
+              <Image
+                style={styles.xianjin}
+                src={
+                  'https://img.alicdn.com/tfs/TB1OvsYoW61gK0jSZFlXXXDKFXa-60-60.png'
+                }
+              />
+              <Text style={styles.fashionHome}>{this.item.user.userName}</Text>
+            </View>
+            <View style={styles.group}>
+              <Image
+                style={styles.favorite}
+                src={
+                  'https://img.alicdn.com/tfs/TB1arwYo7T2gK0jSZFkXXcIQFXa-46-44.png'
+                }
+              />
+              <Text style={styles.num}>{this.item.readCount}</Text>
+            </View>
+          </View>
+        </View>
+      </View>
     );
   }
 }
 
-ReactDOM.render(<Mod />, document.getElementById('container'));
+export default Mod;
