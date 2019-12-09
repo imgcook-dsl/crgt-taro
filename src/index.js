@@ -7,7 +7,7 @@ function isEndOfPX(value) {
 }
 
 function getPX(value) {
-  return value.slice(0,-2);
+  return value.slice(0, -2);
 }
 
 function transformPropValue(propName, propValue) {
@@ -16,11 +16,17 @@ function transformPropValue(propName, propValue) {
   } else {
     const isPX = isEndOfPX(propValue);
 
-    return `${propName}: ${isPX ? transformPX(getPX(propValue)) :'\''+ propValue+"'"},`;
+    return `${propName}: ${
+      isPX ? transformPX(getPX(propValue)) : "'" + propValue + "'"
+    },`;
   }
 }
 
-const shouldIgnoreOnReactNativeProp = ["boxSizing", "whiteSpace", "textOverflow"];
+const shouldIgnoreOnReactNativeProp = [
+  "boxSizing",
+  "whiteSpace",
+  "textOverflow"
+];
 
 /**
  *
@@ -42,7 +48,7 @@ function transformStyle(styles) {
 
   for (let k in styles) {
     if (styles.hasOwnProperty(k)) {
-     str= str + k + ":" + transformCSSProperties(styles[k]) + ",";
+      str = str + k + ":" + transformCSSProperties(styles[k]) + ",";
     }
   }
 
@@ -71,6 +77,7 @@ module.exports = function(schema, option) {
   }
 
   function transform(json) {
+    console.log("transform");
     var result = "";
 
     if (Array.isArray(json)) {
@@ -81,23 +88,25 @@ module.exports = function(schema, option) {
       var type = json.componentName && json.componentName.toLowerCase();
       var className = json.props && json.props.className;
       var classString = className ? ` style={styles.${className}}` : "";
-
+      console.log("type", type);
       switch (type) {
         case "text":
           var innerText = parseProps(json.props.text);
           result += `<Text${classString}>${innerText}</Text>`;
           break;
+
+        case "image":
+          var source = parseProps(json.props.src, true);
+          result += `<Image${classString} src={${source}}  />`;
+          break;
         case "div":
         case "page":
+        default:
           if (json.children && json.children.length > 0) {
             result += `<View${classString}>${transform(json.children)}</View>`;
           } else {
             result += `<View${classString} />`;
           }
-          break;
-        case "image":
-          var source = parseProps(json.props.src, true);
-          result += `<Image${classString} src={${source}}  />`;
           break;
       }
 
@@ -122,7 +131,7 @@ module.exports = function(schema, option) {
     }
   `;
 
-  renderData.style = `var styles = ${(transformStyle(style))};`;
+  renderData.style = `var styles = ${transformStyle(style)};`;
   renderData.exports = `export default Mod;`;
 
   const prettierOpt = {

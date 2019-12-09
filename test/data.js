@@ -1,60 +1,144 @@
 module.exports = {
-  "componentName": "Page",
-  "id": "Block_745855",
-  "rect": {
-    "x": 0,
-    "y": 0,
-    "width": 342,
-    "height": 534
-  },
-  "smart": {},
-  "props": {
-    "style": {
-      "display": "flex",
-      "flexDirection": "row",
-      "justifyContent": "space-around",
-      "alignItems": "flex-start",
-      "height": "534px"
-    },
-    "className": "box"
-  },
+  "componentName": "Temp",
+  "fileName": "temp",
+  "props": {},
   "children": [{
     "componentName": "Div",
+    "id": "Block_878992",
+    "rect": {
+      "x": 0,
+      "y": 60,
+      "width": 710,
+      "height": 104
+    },
+    "smart": {},
     "props": {
-      "onClick": function onClick(e) {
-        console.log(e.event)
-      }
+      "style": {
+        "boxSizing": "border-box",
+        "display": "flex",
+        "alignItems": "center",
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "marginTop": "60px",
+        "paddingRight": "49px",
+        "paddingLeft": "50px",
+        "width": "710px",
+        "height": "104px"
+      },
+      "className": "bd"
     },
     "children": [{
       "componentName": "Div",
-      "id": "Block_644975",
+      "id": "Block_657781",
       "rect": {
-        "x": 0,
-        "y": 0,
-        "width": 342,
-        "height": 342
+        "x": 50,
+        "y": 60,
+        "width": 104,
+        "height": 104
+      },
+      "smart": {
+        "nodeIdentification": {
+          "repeat": {
+            "group": "602678",
+            "sequence": "0"
+          }
+        }
+      },
+      "props": {
+        "style": {
+          "display": "flex",
+          "alignItems": "flex-start",
+          "flexDirection": "column",
+          "height": "104px"
+        },
+        "className": "wrap"
+      },
+      "children": [{
+        "componentName": "Text",
+        "id": "Text_5_0",
+        "rect": {
+          "x": 50,
+          "y": 60,
+          "width": 104,
+          "height": 32
+        },
+        "smart": {},
+        "props": {
+          "style": {
+            "width": "104px",
+            "maxWidth": "104px",
+            "height": "32px",
+            "overflow": "hidden",
+            "textOverflow": "ellipsis",
+            "lineHeight": "32px",
+            "whiteSpace": "nowrap",
+            "color": "#7a8599",
+            "fontSize": "26px",
+            "fontWeight": 400,
+            "lines": 1
+          },
+          "text": "出发城市",
+          "className": "departureCity"
+        }
+      }, {
+        "componentName": "Text",
+        "id": "Text_6_0",
+        "rect": {
+          "x": 50,
+          "y": 116,
+          "width": 80,
+          "height": 48
+        },
+        "smart": {},
+        "props": {
+          "style": {
+            "marginTop": "24px",
+            "width": "80px",
+            "maxWidth": "92px",
+            "height": "48px",
+            "overflow": "hidden",
+            "textOverflow": "ellipsis",
+            "lineHeight": "48px",
+            "whiteSpace": "nowrap",
+            "color": "#323233",
+            "fontSize": "40px",
+            "fontWeight": 500,
+            "lines": 1
+          },
+          "text": "北京",
+          "className": "beijing"
+        }
+      }]
+    }, {
+      "componentName": "Div",
+      "id": "Block_886848",
+      "rect": {
+        "x": 320,
+        "y": 79,
+        "width": 70,
+        "height": 70
       },
       "smart": {},
       "props": {
         "style": {
           "display": "flex",
           "position": "relative",
-          "alignItems": "flex-start",
+          "alignItems": "center",
           "flexDirection": "row",
-          "opacity": "1.00",
-          "width": "342px",
-          "height": "342px"
+          "justifyContent": "center",
+          "width": "70px",
+          "height": "70px"
         },
-        "className": "bd"
+        "className": "block"
       },
       "children": [{
         "componentName": "Image",
-        "id": "Image_7",
+        "id": "Image_2",
         "rect": {
-          "x": 0,
-          "y": 0,
-          "width": 342,
-          "height": 342
+          "x": 320,
+          "y": 79,
+          "width": 70,
+          "height": 70
         },
         "smart": {},
         "props": {
@@ -62,372 +146,333 @@ module.exports = {
             "position": "absolute",
             "top": "0px",
             "left": "0px",
-            "width": "342px",
-            "height": "342px",
-            "overflow": "hidden"
+            "width": "70px",
+            "height": "70px"
           },
-          "src": "https://img.alicdn.com/tfs/TB1bLoWoYH1gK0jSZFwXXc7aXXa-684-684.png",
-          "className": "layer"
+          "src": "https://ai-sample.oss-cn-hangzhou.aliyuncs.com/test/9b3447701a7211ea92f973cd20f79d78.png",
+          "className": "largeIcon"
         }
       }, {
         "componentName": "Image",
-        "id": "Image_8",
+        "id": "Image_3",
         "rect": {
-          "x": 0,
-          "y": 0,
-          "width": 342,
-          "height": 342
+          "x": 335,
+          "y": 103,
+          "width": 40,
+          "height": 23
         },
         "smart": {},
         "props": {
           "style": {
-            "position": "absolute",
-            "top": "0px",
-            "left": "0px",
-            "opacity": "1.00",
-            "width": "342px",
-            "height": "342px"
-          },
-          "className": "bg",
-          "src": "{{this.item.coverImage}}"
-        }
-      }, {
-        "componentName": "Div",
-        "id": "Shape_9",
-        "rect": {
-          "x": 18,
-          "y": 18,
-          "width": 122,
-          "height": 30
-        },
-        "smart": {},
-        "props": {
-          "style": {
-            "boxSizing": "border-box",
-            "display": "flex",
             "position": "relative",
-            "alignItems": "center",
-            "flexDirection": "row",
-            "marginTop": "18px",
-            "marginLeft": "18px",
-            "borderRadius": "15px",
-            "backgroundColor": "rgba(0,0,0,0.40)",
-            "paddingRight": "9px",
-            "paddingLeft": "10px",
-            "height": "30px"
+            "width": "40px",
+            "height": "23px"
           },
-          "className": "wrap"
-        },
-        "children": [{
-          "componentName": "Image",
-          "id": "Image_11",
-          "rect": {
-            "x": 28,
-            "y": 24,
-            "width": 14,
-            "height": 18
-          },
-          "smart": {},
-          "props": {
-            "style": {
-              "opacity": "1.00",
-              "width": "14px",
-              "height": "18px"
-            },
-            "src": "https://img.alicdn.com/tfs/TB1mtZRoVT7gK0jSZFpXXaTkpXa-28-36.png",
-            "className": "riverdinwei"
-          },
-          "loop": "{{this.state.data}}"
-        }, {
-          "componentName": "Text",
-          "id": "Text_10_0",
-          "rect": {
-            "x": 46,
-            "y": 22,
-            "width": 84,
-            "height": 22
-          },
-          "smart": {},
-          "props": {
-            "style": {
-              "marginLeft": "4px",
-              "width": "84px",
-              "height": "22px",
-              "lineHeight": "22px",
-              "whiteSpace": "nowrap",
-              "color": "#ffffff",
-              "fontSize": "18px",
-              "fontWeight": 400,
-              "lines": 1
-            },
-            "text": "距离500m",
-            "className": "distance"
-          },
-          "loop": [1, 2]
-        }]
+          "src": "https://ai-sample.oss-cn-hangzhou.aliyuncs.com/test/9b595ba01a7211ea9bd4bdb36b29f2c4.png",
+          "className": "mark"
+        }
       }]
     }, {
       "componentName": "Div",
-      "id": "Shape_5",
+      "id": "Block_895412",
       "rect": {
-        "x": 0,
-        "y": 342,
-        "width": 342,
-        "height": 114
+        "x": 556,
+        "y": 60,
+        "width": 104,
+        "height": 104
       },
-      "smart": {},
+      "smart": {
+        "nodeIdentification": {
+          "repeat": {
+            "group": "602678",
+            "sequence": "1"
+          }
+        }
+      },
       "props": {
         "style": {
           "display": "flex",
           "alignItems": "flex-start",
-          "flexDirection": "row",
-          "justifyContent": "center",
-          "backgroundColor": "#ffffff",
-          "width": "342px",
-          "height": "114px"
+          "flexDirection": "column",
+          "height": "104px"
         },
-        "className": "main"
+        "className": "group"
       },
       "children": [{
         "componentName": "Text",
-        "id": "Text_6_0",
+        "id": "Text_8_0",
         "rect": {
-          "x": 18,
-          "y": 364,
-          "width": 300,
-          "height": 88
+          "x": 556,
+          "y": 60,
+          "width": 104,
+          "height": 32
         },
         "smart": {},
         "props": {
           "style": {
-            "marginTop": "22px",
-            "width": "300px",
-            "height": "88px",
+            "width": "104px",
+            "maxWidth": "142px",
+            "height": "32px",
             "overflow": "hidden",
             "textOverflow": "ellipsis",
-            "lineHeight": "44px",
-            "color": "#333333",
-            "fontSize": "30px",
+            "lineHeight": "32px",
+            "whiteSpace": "nowrap",
+            "color": "#7a8599",
+            "fontSize": "26px",
             "fontWeight": 400,
-            "lines": 2
+            "lines": 1
           },
-          "className": "title",
-          "text": "{{this.item.title}}"
+          "text": "到达城市",
+          "className": "arrivalCity"
+        }
+      }, {
+        "componentName": "Text",
+        "id": "Text_9_0",
+        "rect": {
+          "x": 580,
+          "y": 116,
+          "width": 80,
+          "height": 48
+        },
+        "smart": {},
+        "props": {
+          "style": {
+            "marginTop": "24px",
+            "marginLeft": "24px",
+            "width": "80px",
+            "maxWidth": "118px",
+            "height": "48px",
+            "overflow": "hidden",
+            "textOverflow": "ellipsis",
+            "lineHeight": "48px",
+            "whiteSpace": "nowrap",
+            "color": "#323233",
+            "fontSize": "40px",
+            "fontWeight": 500,
+            "lines": 1
+          },
+          "text": "燕郊",
+          "className": "yanjiao"
         }
       }]
-    }, {
+    }]
+  }, {
+    "componentName": "Div",
+    "id": "Block_48861",
+    "rect": {
+      "x": 0,
+      "y": 180,
+      "width": 709,
+      "height": 1
+    },
+    "smart": {},
+    "props": {
+      "style": {
+        "display": "flex",
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "marginTop": "16px",
+        "width": "709px"
+      },
+      "className": "main"
+    },
+    "children": [{
       "componentName": "Div",
-      "id": "Shape_0",
+      "id": "Shape_1",
       "rect": {
-        "x": 0,
-        "y": 456,
-        "width": 342,
-        "height": 78
+        "x": 36,
+        "y": 180,
+        "width": 638,
+        "height": 1
       },
       "smart": {},
       "props": {
         "style": {
-          "boxSizing": "border-box",
+          "backgroundColor": "#e8e8e8",
+          "width": "638px",
+          "height": "1px"
+        },
+        "className": "color"
+      }
+    }]
+  }, {
+    "componentName": "Text",
+    "id": "Text_7_0",
+    "rect": {
+      "x": 50,
+      "y": 221,
+      "width": 104,
+      "height": 32
+    },
+    "smart": {},
+    "props": {
+      "style": {
+        "marginTop": "40px",
+        "marginLeft": "50px",
+        "width": "104px",
+        "maxWidth": "648px",
+        "height": "32px",
+        "overflow": "hidden",
+        "textOverflow": "ellipsis",
+        "lineHeight": "32px",
+        "whiteSpace": "nowrap",
+        "color": "#7a8599",
+        "fontSize": "26px",
+        "fontWeight": 400,
+        "lines": 1
+      },
+      "text": "出发时间",
+      "className": "submain"
+    }
+  }, {
+    "componentName": "Div",
+    "id": "Block_606793",
+    "rect": {
+      "x": 0,
+      "y": 277,
+      "width": 709,
+      "height": 42
+    },
+    "smart": {},
+    "props": {
+      "style": {
+        "display": "flex",
+        "flexDirection": "row",
+        "alignItems": "flex-end",
+        "marginTop": "24px",
+        "width": "709px",
+        "height": "42px",
+        "verticalAlign": "bottom",
+        "position": "relative"
+      },
+      "className": "row"
+    },
+    "children": [{
+      "componentName": "Text",
+      "id": "Text_13_0",
+      "rect": {
+        "x": 50,
+        "y": 277,
+        "width": 38,
+        "height": 42
+      },
+      "smart": {},
+      "props": {
+        "style": {
+          "marginLeft": "50px",
+          "height": "42px",
+          "fontWeight": "normal",
+          "fontSize": "36px",
+          "color": "#323233",
+          "lineHeight": "42px",
+          "whiteSpace": "nowrap",
+          "lines": 1,
+          "fontFamily": "Helvetica"
+        },
+        "text": "11",
+        "className": "num"
+      }
+    }, {
+      "componentName": "Text",
+      "id": "Text_14_0",
+      "rect": {
+        "x": 296,
+        "y": 280,
+        "width": 56,
+        "height": 42
+      },
+      "smart": {},
+      "props": {
+        "style": {
+          "marginLeft": 12,
+          "height": "38px",
+          "fontWeight": 400,
+          "fontSize": "28px",
+          "color": "#323233",
+          "lineHeight": "42px",
+          "position": "static",
+          "left": "296px",
+          "bottom": "220px",
+          "whiteSpace": "nowrap",
+          "lines": 1
+        },
+        "text": "今天",
+        "className": "today"
+      }
+    }]
+  }, {
+    "componentName": "Div",
+    "id": "Block_122016",
+    "rect": {
+      "x": 0,
+      "y": 398,
+      "width": 709,
+      "height": 88
+    },
+    "smart": {},
+    "props": {
+      "style": {
+        "display": "flex",
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "marginTop": "79px",
+        "width": "709px"
+      },
+      "className": "ft"
+    },
+    "children": [{
+      "componentName": "Div",
+      "id": "Shape_11",
+      "rect": {
+        "x": 32,
+        "y": 398,
+        "width": 646,
+        "height": 88
+      },
+      "smart": {},
+      "props": {
+        "style": {
+          "backgroundColor": "#2a70fe",
+          "width": "646px",
+          "height": "88px",
+          "boxShadow": "0px 2px 8px rgba(82, 88, 102, 0.20)",
           "display": "flex",
           "alignItems": "center",
           "flexDirection": "row",
-          "justifyContent": "space-between",
-          "borderBottomLeftRadius": "12px",
-          "borderBottomRightRadius": "12px",
-          "backgroundColor": "#ffffff",
-          "paddingRight": "17px",
-          "paddingLeft": "18px",
-          "width": "342px",
-          "height": "78px",
-          "overflow": "hidden"
+          "justifyContent": "center",
+          "borderRadius": "4px"
         },
-        "className": "ft"
+        "className": "queryWrap"
       },
       "children": [{
-        "componentName": "Div",
-        "id": "Block_788015",
+        "componentName": "Text",
+        "id": "Text_12_0",
         "rect": {
-          "x": 18,
-          "y": 480,
-          "width": 132,
-          "height": 30
+          "x": 321,
+          "y": 421,
+          "width": 68,
+          "height": 42
         },
         "smart": {},
         "props": {
           "style": {
-            "display": "flex",
-            "alignItems": "center",
-            "flexDirection": "row",
-            "height": "30px"
+            "width": "68px",
+            "maxWidth": "634px",
+            "height": "42px",
+            "overflow": "hidden",
+            "textAlign": "center",
+            "textOverflow": "ellipsis",
+            "lineHeight": "42px",
+            "whiteSpace": "nowrap",
+            "color": "#ffffff",
+            "fontSize": "34px",
+            "fontWeight": 500,
+            "lines": 1
           },
-          "className": "block"
-        },
-        "children": [{
-          "componentName": "Image",
-          "id": "Image_1",
-          "rect": {
-            "x": 18,
-            "y": 480,
-            "width": 30,
-            "height": 30
-          },
-          "smart": {},
-          "props": {
-            "style": {
-              "width": "30px",
-              "height": "30px"
-            },
-            "src": "https://img.alicdn.com/tfs/TB1OvsYoW61gK0jSZFlXXXDKFXa-60-60.png",
-            "className": "xianjin"
-          }
-        }, {
-          "componentName": "Text",
-          "id": "Text_2_0",
-          "rect": {
-            "x": 54,
-            "y": 481,
-            "width": 96,
-            "height": 28
-          },
-          "smart": {},
-          "props": {
-            "style": {
-              "marginLeft": "6px",
-              "width": "96px",
-              "height": "28px",
-              "lineHeight": "28px",
-              "whiteSpace": "nowrap",
-              "color": "#666666",
-              "fontSize": "24px",
-              "fontWeight": 300,
-              "lines": 1
-            },
-            "className": "fashionHome",
-            "text": "{{this.item.user.userName}}"
-          }
-        }]
-      }, {
-        "componentName": "Div",
-        "id": "Block_615383",
-        "rect": {
-          "x": 261,
-          "y": 480,
-          "width": 63,
-          "height": 30
-        },
-        "smart": {},
-        "props": {
-          "style": {
-            "display": "flex",
-            "alignItems": "center",
-            "flexDirection": "row",
-            "height": "30px"
-          },
-          "className": "group"
-        },
-        "children": [{
-          "componentName": "Image",
-          "id": "Image_4",
-          "rect": {
-            "x": 261,
-            "y": 484,
-            "width": 22,
-            "height": 22
-          },
-          "smart": {},
-          "props": {
-            "style": {
-              "width": "22px",
-              "height": "22px"
-            },
-            "src": "https://img.alicdn.com/tfs/TB1arwYo7T2gK0jSZFkXXcIQFXa-46-44.png",
-            "className": "favorite"
-          }
-        }, {
-          "componentName": "Text",
-          "id": "Text_3_0",
-          "rect": {
-            "x": 288,
-            "y": 482,
-            "width": 36,
-            "height": 26
-          },
-          "smart": {},
-          "props": {
-            "style": {
-              "marginLeft": "5px",
-              "width": "36px",
-              "height": "26px",
-              "lineHeight": "26px",
-              "whiteSpace": "nowrap",
-              "color": "#999999",
-              "fontSize": "22px",
-              "fontWeight": 400,
-              "lines": 1
-            },
-            "className": "num",
-            "text": "{{this.item.readCount}}"
-          }
-        }],
-        "condition": "{{this.isReadCountShow(this.item.readCount)}}"
+          "text": "查询",
+          "className": "query"
+        }
       }]
-    }],
-    "loop": [{
-      "title": "小户型卫浴怎样才能装得高大上？",
-      "coverImage": "https://img.alicdn.com/tfs/TB1Txq6o7T2gK0jSZFkXXcIQFXa-684-684.png",
-      "readCount": 200,
-      "user": {
-        "userImage": "https://img.alicdn.com/tfs/TB1DWe6oYj1gK0jSZFOXXc7GpXa-60-60.png",
-        "userName": "时尚家居"
-      },
-      "url": "https://www.imgcook.com"
-    }, {
-      "title": "拥有超多功能的40平米简约小公寓了解一下",
-      "coverImage": "https://img.alicdn.com/tfs/TB1XRQTo7P2gK0jSZPxXXacQpXa-684-648.png",
-      "readCount": 500,
-      "user": {
-        "userImage": "https://img.alicdn.com/tfs/TB1DWe6oYj1gK0jSZFOXXc7GpXa-60-60.png",
-        "userName": "花花设计工作"
-      },
-      "url": "https://www.imgcook.com/docs"
-    }],
-    "loopArgs": ["item", "index"]
-  }],
-  "fileName": "index",
-  "methods": {
-    "isReadCountShow": function isReadCountShow(readCount) {
-      
-      return readCount > 300;
-    },
-    "test": () => {
-      console.log(123)
-    }
-  },
-  "lifeCycles": {
-    "componentDidUpdate": (prevProps, prevState, snapshot) => {
-      console.log('aaa')
-    }
-  },
-  "dataSource": {
-    "list": [{
-      "id": "example",
-      "isInit": true,
-      "type": "fetch",
-      "options": {
-        "method": "GET",
-        "params": {
-          "aaa": "bbb"
-        },
-        "uri": "https://jsonplaceholder.typicode.com/todos/1"
-      }
-    }],
-    "dataHandler": function dataHandler(dataMap) {
-      console.log(dataMap, 'dataMap')
-      return dataMap;
-    }
-  },
-  "state": {
-    "ccc": "ddd",
-    "data": [1, 2]
-  }
+    }]
+  }]
 }
