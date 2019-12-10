@@ -6,7 +6,7 @@ var styles = {
   zhangSan: {
     marginTop: transfromPX(1),
     height: transfromPX(34),
-    fontWeight: 500,
+    fontWeight: 'bold',
     fontSize: transfromPX(28),
     color: '#323233',
     lineHeight: transfromPX(34),
@@ -22,7 +22,7 @@ var styles = {
     ...(process.env.TARO_ENV !== 'rn' ? { whiteSpace: 'nowrap' } : null),
     color: '#266eff',
     fontSize: transfromPX(20),
-    fontWeight: 500
+    fontWeight: 'bold'
   },
   adultWrap: {
     ...(process.env.TARO_ENV !== 'rn' ? { boxSizing: 'border-box' } : null),
@@ -62,7 +62,6 @@ var styles = {
   iDCard: {
     marginTop: transfromPX(16),
     height: transfromPX(30),
-    fontWeight: 400,
     fontSize: transfromPX(24),
     color: '#b8becc',
     lineHeight: transfromPX(30),

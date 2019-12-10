@@ -27,7 +27,7 @@ function transformPropValue(propName, propValue) {
     } else if (weight <= 400) {
       return ""; // normal
     } else {
-      return `fontWeight: 'bold'`;
+      return `fontWeight: 'bold',`;
     }
   } else {
     const isPX = shouldTranformPX(propName, propValue);
