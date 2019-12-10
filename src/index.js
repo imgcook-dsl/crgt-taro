@@ -20,6 +20,15 @@ function transformPropValue(propName, propValue) {
     return `...(process.env.TARO_ENV !== 'rn' ? {${propName}: ${propValueJS}}: null),`;
   } else if (shouldRemoveStyleProp.indexOf(propName) > -1) {
     return "";
+  } else if (propName === "fontWeight") {
+    const weight = parseFloat(propValue);
+    if (isNaN(weight)) {
+      return `fontWeight: '${propValue}',`;
+    } else if (weight <= 400) {
+      return ""; // normal
+    } else {
+      return `fontWeight: 'bold'`;
+    }
   } else {
     const isPX = shouldTranformPX(propName, propValue);
     return `${propName}: ${
