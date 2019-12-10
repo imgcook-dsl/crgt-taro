@@ -2,12 +2,15 @@ function transformPX(num) {
   return `transfromPX(${num})`;
 }
 
-function isEndOfPX(value) {
-  return (value + "").indexOf("px") === value.length - 2;
+function shouldTranformPX(name, value) {
+  return (
+    shouldTransformPXStyleProp.indexOf(name) > -1 ||
+    (value + "").indexOf("px") === value.length - 2
+  );
 }
 
 function getPX(value) {
-  return value.slice(0, -2);
+  return parseFloat(value);
 }
 
 function transformPropValue(propName, propValue) {
@@ -18,8 +21,7 @@ function transformPropValue(propName, propValue) {
   } else if (shouldRemoveStyleProp.indexOf(propName) > -1) {
     return "";
   } else {
-    const isPX = isEndOfPX(propValue);
-
+    const isPX = shouldTranformPX(propName, propValue);
     return `${propName}: ${
       isPX ? transformPX(getPX(propValue)) : propValueJS
     },`;
@@ -33,6 +35,24 @@ const shouldIgnoreOnReactNativeProp = [
 ];
 
 const shouldRemoveStyleProp = ["lines"];
+
+const shouldTransformPXStyleProp = [
+  "top",
+  "left",
+  "bottom",
+  "right",
+  "width",
+  "height",
+  "lineHeight",
+  "paddingLeft",
+  "paddingRight",
+  "paddingTop",
+  "paddingBottom",
+  "marginLeft",
+  "marginRight",
+  "marginTop",
+  "marginBottom"
+];
 
 /**
  *

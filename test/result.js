@@ -12,20 +12,20 @@ var styles = {
     lineHeight: transfromPX(34),
     maxWidth: transfromPX(183),
     overflow: 'hidden',
-    ...(process.env.TARO_ENV === 'rn' ? { textOverflow: 'ellipsis' } : null),
-    ...(process.env.TARO_ENV === 'rn' ? { whiteSpace: 'nowrap' } : null)
+    ...(process.env.TARO_ENV !== 'rn' ? { textOverflow: 'ellipsis' } : null),
+    ...(process.env.TARO_ENV !== 'rn' ? { whiteSpace: 'nowrap' } : null)
   },
   adult: {
     width: transfromPX(40),
     height: transfromPX(24),
     lineHeight: transfromPX(24),
-    ...(process.env.TARO_ENV === 'rn' ? { whiteSpace: 'nowrap' } : null),
+    ...(process.env.TARO_ENV !== 'rn' ? { whiteSpace: 'nowrap' } : null),
     color: '#266eff',
     fontSize: transfromPX(20),
     fontWeight: 500
   },
   adultWrap: {
-    ...(process.env.TARO_ENV === 'rn' ? { boxSizing: 'border-box' } : null),
+    ...(process.env.TARO_ENV !== 'rn' ? { boxSizing: 'border-box' } : null),
     display: 'flex',
     alignItems: 'center',
     flexDirection: 'row',
@@ -68,8 +68,8 @@ var styles = {
     lineHeight: transfromPX(30),
     maxWidth: transfromPX(341),
     overflow: 'hidden',
-    ...(process.env.TARO_ENV === 'rn' ? { textOverflow: 'ellipsis' } : null),
-    ...(process.env.TARO_ENV === 'rn' ? { whiteSpace: 'pre' } : null),
+    ...(process.env.TARO_ENV !== 'rn' ? { textOverflow: 'ellipsis' } : null),
+    ...(process.env.TARO_ENV !== 'rn' ? { whiteSpace: 'pre' } : null),
     letterSpacing: transfromPX(0.29)
   },
   side: {
@@ -80,9 +80,9 @@ var styles = {
     width: transfromPX(38),
     height: transfromPX(38),
     position: 'absolute',
-    top: 53,
-    bottom: 53,
-    right: 40,
+    top: transfromPX(53),
+    bottom: transfromPX(53),
+    right: transfromPX(40),
     backgroundColor: '#266eff',
     borderRadius: transfromPX(38)
   },
@@ -91,9 +91,9 @@ var styles = {
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'flex-start',
-    paddingLeft: 40,
-    width: 750,
-    height: 146
+    paddingLeft: transfromPX(40),
+    width: transfromPX(750),
+    height: transfromPX(146)
   },
   box: {
     display: 'flex',
