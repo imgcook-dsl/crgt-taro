@@ -60,7 +60,8 @@ const shouldTransformPXStyleProp = [
   "marginLeft",
   "marginRight",
   "marginTop",
-  "marginBottom"
+  "marginBottom",
+  "fontSize"
 ];
 
 /**
@@ -180,12 +181,12 @@ module.exports = function(schema, option) {
   export default Mod;
 `;
 
-const styleText = `
+  const styleText = `
 import transfromPX from '@utils/transfromPX';
 import React from 'react';
 
 ${renderData.style}
-`
+`;
 
   const prettierOpt = {
     parser: "babel",
