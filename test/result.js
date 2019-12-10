@@ -3,241 +3,136 @@ import { View, Image, Text } from '@tarojs/components';
 import transfromPX from '@utils/transfromPX';
 
 var styles = {
-  departureCity: {
-    width: transfromPX(104),
-    maxWidth: transfromPX(104),
-    height: transfromPX(32),
-    overflow: 'hidden',
-    ...(process.env.TARO_ENV === 'rn' ? { textOverflow: 'ellipsis' } : null),
-    lineHeight: transfromPX(32),
-    ...(process.env.TARO_ENV === 'rn' ? { whiteSpace: 'nowrap' } : null),
-    color: '#7a8599',
-    fontSize: transfromPX(26),
-    fontWeight: '400',
-    lines: '1'
-  },
-  beijing: {
-    marginTop: transfromPX(24),
-    width: transfromPX(80),
-    maxWidth: transfromPX(92),
-    height: transfromPX(48),
-    overflow: 'hidden',
-    ...(process.env.TARO_ENV === 'rn' ? { textOverflow: 'ellipsis' } : null),
-    lineHeight: transfromPX(48),
-    ...(process.env.TARO_ENV === 'rn' ? { whiteSpace: 'nowrap' } : null),
-    color: '#323233',
-    fontSize: transfromPX(40),
+  zhangSan: {
+    marginTop: transfromPX(1),
+    height: transfromPX(34),
     fontWeight: '500',
+    fontSize: transfromPX(28),
+    color: '#323233',
+    lineHeight: transfromPX(34),
+    maxWidth: transfromPX(183),
+    overflow: 'hidden',
+    ...(process.env.TARO_ENV === 'rn' ? { textOverflow: 'ellipsis' } : null),
+    ...(process.env.TARO_ENV === 'rn' ? { whiteSpace: 'nowrap' } : null),
     lines: '1'
   },
-  wrap: {
-    display: 'flex',
-    alignItems: 'flex-start',
-    flexDirection: 'column',
-    height: transfromPX(104)
-  },
-  largeIcon: {
-    position: 'absolute',
-    top: transfromPX(0),
-    left: transfromPX(0),
-    width: transfromPX(70),
-    height: transfromPX(70)
-  },
-  mark: {
-    position: 'relative',
+  adult: {
     width: transfromPX(40),
-    height: transfromPX(23)
-  },
-  block: {
-    display: 'flex',
-    position: 'relative',
-    alignItems: 'center',
-    flexDirection: 'row',
-    justifyContent: 'center',
-    width: transfromPX(70),
-    height: transfromPX(70)
-  },
-  arrivalCity: {
-    width: transfromPX(104),
-    maxWidth: transfromPX(142),
-    height: transfromPX(32),
-    overflow: 'hidden',
-    ...(process.env.TARO_ENV === 'rn' ? { textOverflow: 'ellipsis' } : null),
-    lineHeight: transfromPX(32),
+    height: transfromPX(24),
+    lineHeight: transfromPX(24),
     ...(process.env.TARO_ENV === 'rn' ? { whiteSpace: 'nowrap' } : null),
-    color: '#7a8599',
-    fontSize: transfromPX(26),
-    fontWeight: '400',
-    lines: '1'
-  },
-  yanjiao: {
-    marginTop: transfromPX(24),
-    marginLeft: transfromPX(24),
-    width: transfromPX(80),
-    maxWidth: transfromPX(118),
-    height: transfromPX(48),
-    overflow: 'hidden',
-    ...(process.env.TARO_ENV === 'rn' ? { textOverflow: 'ellipsis' } : null),
-    lineHeight: transfromPX(48),
-    ...(process.env.TARO_ENV === 'rn' ? { whiteSpace: 'nowrap' } : null),
-    color: '#323233',
-    fontSize: transfromPX(40),
+    color: '#266eff',
+    fontSize: transfromPX(20),
     fontWeight: '500',
     lines: '1'
   },
-  group: {
-    display: 'flex',
-    alignItems: 'flex-start',
-    flexDirection: 'column',
-    height: transfromPX(104)
-  },
-  bd: {
+  adultWrap: {
     ...(process.env.TARO_ENV === 'rn' ? { boxSizing: 'border-box' } : null),
     display: 'flex',
     alignItems: 'center',
     flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginTop: transfromPX(60),
-    paddingRight: transfromPX(49),
-    paddingLeft: transfromPX(50),
-    width: transfromPX(710),
-    height: transfromPX(104)
+    marginLeft: transfromPX(16),
+    borderWidth: transfromPX(2),
+    borderStyle: 'solid',
+    borderColor: 'rgba(38,110,255,1.00)',
+    backgroundColor: '#f3f7ff',
+    paddingRight: transfromPX(15),
+    paddingLeft: transfromPX(14),
+    height: transfromPX(36)
   },
-  color: {
-    backgroundColor: '#e8e8e8',
-    width: transfromPX(638),
-    height: transfromPX(1)
+  iconqianbi: {
+    position: 'absolute',
+    top: transfromPX(4),
+    right: transfromPX(139),
+    width: transfromPX(14),
+    height: transfromPX(15)
   },
-  main: {
+  iconunselected: {
+    position: 'relative',
+    marginTop: transfromPX(4),
+    marginLeft: transfromPX(34),
+    width: transfromPX(28),
+    height: transfromPX(28)
+  },
+  outer: {
+    display: 'flex',
+    position: 'relative',
+    flexDirection: 'row',
+    width: transfromPX(341),
+    height: transfromPX(36)
+  },
+  iDCard: {
+    marginTop: transfromPX(16),
+    height: transfromPX(30),
+    fontWeight: '400',
+    fontSize: transfromPX(24),
+    color: '#b8becc',
+    lineHeight: transfromPX(30),
+    maxWidth: transfromPX(341),
+    overflow: 'hidden',
+    ...(process.env.TARO_ENV === 'rn' ? { textOverflow: 'ellipsis' } : null),
+    ...(process.env.TARO_ENV === 'rn' ? { whiteSpace: 'pre' } : null),
+    lines: '1',
+    letterSpacing: transfromPX(0.29)
+  },
+  side: {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
-    marginTop: transfromPX(16),
-    width: transfromPX(709)
-  },
-  submain: {
-    marginTop: transfromPX(40),
-    marginLeft: transfromPX(50),
-    width: transfromPX(104),
-    maxWidth: transfromPX(648),
-    height: transfromPX(32),
-    overflow: 'hidden',
-    ...(process.env.TARO_ENV === 'rn' ? { textOverflow: 'ellipsis' } : null),
-    lineHeight: transfromPX(32),
-    ...(process.env.TARO_ENV === 'rn' ? { whiteSpace: 'nowrap' } : null),
-    color: '#7a8599',
-    fontSize: transfromPX(26),
-    fontWeight: '400',
-    lines: '1'
-  },
-  num: {
-    marginLeft: transfromPX(50),
-    height: transfromPX(42),
-    fontWeight: 'normal',
-    fontSize: transfromPX(36),
-    color: '#323233',
-    lineHeight: transfromPX(42),
-    ...(process.env.TARO_ENV === 'rn' ? { whiteSpace: 'nowrap' } : null),
-    lines: '1',
-    fontFamily: 'Helvetica'
-  },
-  today: {
-    marginLeft: '12',
+    alignItems: 'flex-start',
+    width: transfromPX(38),
     height: transfromPX(38),
-    fontWeight: '400',
-    fontSize: transfromPX(28),
-    color: '#323233',
-    lineHeight: transfromPX(42),
-    position: 'static',
-    left: transfromPX(296),
-    bottom: transfromPX(220),
-    ...(process.env.TARO_ENV === 'rn' ? { whiteSpace: 'nowrap' } : null),
-    lines: '1'
+    position: 'absolute',
+    top: '53',
+    bottom: '53',
+    right: '40',
+    backgroundColor: '#266eff',
+    borderRadius: transfromPX(38)
   },
-  row: {
+  primary: {
     display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'flex-end',
-    marginTop: transfromPX(24),
-    width: transfromPX(709),
-    height: transfromPX(42),
-    verticalAlign: 'bottom',
-    position: 'relative'
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'flex-start',
+    paddingLeft: '40',
+    width: '750',
+    height: '146'
   },
-  query: {
-    width: transfromPX(68),
-    maxWidth: transfromPX(634),
-    height: transfromPX(42),
-    overflow: 'hidden',
-    textAlign: 'center',
-    ...(process.env.TARO_ENV === 'rn' ? { textOverflow: 'ellipsis' } : null),
-    lineHeight: transfromPX(42),
-    ...(process.env.TARO_ENV === 'rn' ? { whiteSpace: 'nowrap' } : null),
-    color: '#ffffff',
-    fontSize: transfromPX(34),
-    fontWeight: '500',
-    lines: '1'
-  },
-  queryWrap: {
-    backgroundColor: '#2a70fe',
-    width: transfromPX(646),
-    height: transfromPX(88),
-    boxShadow: '0px 2px 8px rgba(82, 88, 102, 0.20)',
+  box: {
     display: 'flex',
     alignItems: 'center',
     flexDirection: 'row',
-    justifyContent: 'center',
-    borderRadius: transfromPX(4)
-  },
-  ft: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'center',
-    marginTop: transfromPX(79),
-    width: transfromPX(709)
+    justifyContent: 'space-between',
+    width: transfromPX(670),
+    height: transfromPX(82)
   }
 };
 
 class Mod extends Component {
   render() {
     return (
-      <View>
-        <View style={styles.bd}>
-          <View style={styles.wrap}>
-            <Text style={styles.departureCity}>出发城市</Text>
-            <Text style={styles.beijing}>北京</Text>
-          </View>
-          <View style={styles.block}>
+      <View style={styles.box}>
+        <View style={styles.primary}>
+          <View style={styles.outer}>
+            <Text style={styles.zhangSan}>张三</Text>
+            <View style={styles.adultWrap}>
+              <Text style={styles.adult}>成人</Text>
+            </View>
             <Image
-              style={styles.largeIcon}
+              style={styles.iconqianbi}
               src={
-                'https://ai-sample.oss-cn-hangzhou.aliyuncs.com/test/9b3447701a7211ea92f973cd20f79d78.png'
+                'https://ai-sample.oss-cn-hangzhou.aliyuncs.com/test/b1fe15e01a7b11eaab50d947cca984e9.png'
               }
             />
             <Image
-              style={styles.mark}
+              style={styles.iconunselected}
               src={
-                'https://ai-sample.oss-cn-hangzhou.aliyuncs.com/test/9b595ba01a7211ea9bd4bdb36b29f2c4.png'
+                'https://ai-sample.oss-cn-hangzhou.aliyuncs.com/test/b22f10f01a7b11eab1944359678a30ad.png'
               }
             />
           </View>
-          <View style={styles.group}>
-            <Text style={styles.arrivalCity}>到达城市</Text>
-            <Text style={styles.yanjiao}>燕郊</Text>
-          </View>
-        </View>
-        <View style={styles.main}>
-          <View style={styles.color} />
-        </View>
-        <Text style={styles.submain}>出发时间</Text>
-        <View style={styles.row}>
-          <Text style={styles.num}>11</Text>
-          <Text style={styles.today}>今天</Text>
-        </View>
-        <View style={styles.ft}>
-          <View style={styles.queryWrap}>
-            <Text style={styles.query}>查询</Text>
-          </View>
+          <Text style={styles.iDCard}>身份证 240603199004020436</Text>
+          <View style={styles.side} />
         </View>
       </View>
     );

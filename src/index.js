@@ -77,7 +77,6 @@ module.exports = function(schema, option) {
   }
 
   function transform(json) {
-    console.log("transform");
     var result = "";
 
     if (Array.isArray(json)) {
@@ -88,7 +87,6 @@ module.exports = function(schema, option) {
       var type = json.componentName && json.componentName.toLowerCase();
       var className = json.props && json.props.className;
       var classString = className ? ` style={styles.${className}}` : "";
-      console.log("type", type);
       switch (type) {
         case "text":
           var innerText = parseProps(json.props.text);
