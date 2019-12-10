@@ -79,15 +79,20 @@ function transformCSSProperties(CSSProperties) {
 }
 
 function transformStyle(styles) {
-  let str = "{";
+  let str = "";
 
   for (let k in styles) {
     if (styles.hasOwnProperty(k)) {
-      str = str + k + ":" + transformCSSProperties(styles[k]) + ",";
+      str =
+        str +
+        "export const " +
+        k +
+        ": React.CSSProperties = " +
+        transformCSSProperties(styles[k]) +
+        ";";
     }
   }
 
-  str += "}";
   return str;
 }
 
@@ -162,8 +167,25 @@ module.exports = function(schema, option) {
     }
   `;
 
-  renderData.style = `var styles = ${transformStyle(style)};`;
+  renderData.style = `${transformStyle(style)};`;
   renderData.exports = `export default Mod;`;
+
+  const tsx = `
+  import Taro from '@tarojs/taro';
+  import { View, Image, Text } from '@tarojs/components';
+  import * as styles from './index.style.ts';
+
+  ${renderData.modClass}
+
+  export default Mod;
+`;
+
+const styleText = `
+import transfromPX from '@utils/transfromPX';
+import React from 'react';
+
+${renderData.style}
+`
 
   const prettierOpt = {
     parser: "babel",
@@ -172,7 +194,19 @@ module.exports = function(schema, option) {
   };
 
   return {
-    renderData: renderData,
+    panelDisplay: [
+      {
+        panelName: "index.tsx",
+        panelValue: tsx,
+        panelType: "tsx"
+      },
+      {
+        panelName: "index.style.ts",
+        panelValue: styleText,
+        panelType: "ts"
+      }
+    ],
+    noTemplate: true,
     prettierOpt: prettierOpt
   };
 };
