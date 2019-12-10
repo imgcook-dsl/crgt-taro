@@ -14,7 +14,7 @@ function transformPropValue(propName, propValue) {
   const isNumber = !isNaN(Number(propValue));
   const propValueJS = isNumber ? propValue : `'${propValue}'`;
   if (shouldIgnoreOnReactNativeProp.indexOf(propName) > -1) {
-    return `...(process.env.TARO_ENV === 'rn' ? {${propName}: ${propValueJS}}:null),`;
+    return `...(process.env.TARO_ENV !== 'rn' ? {${propName}: ${propValueJS}}: null),`;
   } else if (shouldRemoveStyleProp.indexOf(propName) > -1) {
     return "";
   } else {
