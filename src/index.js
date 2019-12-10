@@ -120,12 +120,10 @@ module.exports = function(schema, option) {
   var jsx = `${transform(schema)}`;
 
   renderData.modClass = `
-    class Mod extends Component {
-      render() {
+    const Mod = () => {
         return (
           ${jsx}
         );
-      }
     }
   `;
 
