@@ -6,15 +6,14 @@ var styles = {
   zhangSan: {
     marginTop: transfromPX(1),
     height: transfromPX(34),
-    fontWeight: '500',
+    fontWeight: 500,
     fontSize: transfromPX(28),
     color: '#323233',
     lineHeight: transfromPX(34),
     maxWidth: transfromPX(183),
     overflow: 'hidden',
     ...(process.env.TARO_ENV === 'rn' ? { textOverflow: 'ellipsis' } : null),
-    ...(process.env.TARO_ENV === 'rn' ? { whiteSpace: 'nowrap' } : null),
-    lines: '1'
+    ...(process.env.TARO_ENV === 'rn' ? { whiteSpace: 'nowrap' } : null)
   },
   adult: {
     width: transfromPX(40),
@@ -23,8 +22,7 @@ var styles = {
     ...(process.env.TARO_ENV === 'rn' ? { whiteSpace: 'nowrap' } : null),
     color: '#266eff',
     fontSize: transfromPX(20),
-    fontWeight: '500',
-    lines: '1'
+    fontWeight: 500
   },
   adultWrap: {
     ...(process.env.TARO_ENV === 'rn' ? { boxSizing: 'border-box' } : null),
@@ -64,7 +62,7 @@ var styles = {
   iDCard: {
     marginTop: transfromPX(16),
     height: transfromPX(30),
-    fontWeight: '400',
+    fontWeight: 400,
     fontSize: transfromPX(24),
     color: '#b8becc',
     lineHeight: transfromPX(30),
@@ -72,7 +70,6 @@ var styles = {
     overflow: 'hidden',
     ...(process.env.TARO_ENV === 'rn' ? { textOverflow: 'ellipsis' } : null),
     ...(process.env.TARO_ENV === 'rn' ? { whiteSpace: 'pre' } : null),
-    lines: '1',
     letterSpacing: transfromPX(0.29)
   },
   side: {
@@ -83,9 +80,9 @@ var styles = {
     width: transfromPX(38),
     height: transfromPX(38),
     position: 'absolute',
-    top: '53',
-    bottom: '53',
-    right: '40',
+    top: 53,
+    bottom: 53,
+    right: 40,
     backgroundColor: '#266eff',
     borderRadius: transfromPX(38)
   },
@@ -94,9 +91,9 @@ var styles = {
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'flex-start',
-    paddingLeft: '40',
-    width: '750',
-    height: '146'
+    paddingLeft: 40,
+    width: 750,
+    height: 146
   },
   box: {
     display: 'flex',
@@ -108,35 +105,33 @@ var styles = {
   }
 };
 
-class Mod extends Component {
-  render() {
-    return (
-      <View style={styles.box}>
-        <View style={styles.primary}>
-          <View style={styles.outer}>
-            <Text style={styles.zhangSan}>张三</Text>
-            <View style={styles.adultWrap}>
-              <Text style={styles.adult}>成人</Text>
-            </View>
-            <Image
-              style={styles.iconqianbi}
-              src={
-                'https://ai-sample.oss-cn-hangzhou.aliyuncs.com/test/b1fe15e01a7b11eaab50d947cca984e9.png'
-              }
-            />
-            <Image
-              style={styles.iconunselected}
-              src={
-                'https://ai-sample.oss-cn-hangzhou.aliyuncs.com/test/b22f10f01a7b11eab1944359678a30ad.png'
-              }
-            />
+const Mod = () => {
+  return (
+    <View style={styles.box}>
+      <View style={styles.primary}>
+        <View style={styles.outer}>
+          <Text style={styles.zhangSan}>张三</Text>
+          <View style={styles.adultWrap}>
+            <Text style={styles.adult}>成人</Text>
           </View>
-          <Text style={styles.iDCard}>身份证 240603199004020436</Text>
-          <View style={styles.side} />
+          <Image
+            style={styles.iconqianbi}
+            src={
+              'https://ai-sample.oss-cn-hangzhou.aliyuncs.com/test/b1fe15e01a7b11eaab50d947cca984e9.png'
+            }
+          />
+          <Image
+            style={styles.iconunselected}
+            src={
+              'https://ai-sample.oss-cn-hangzhou.aliyuncs.com/test/b22f10f01a7b11eab1944359678a30ad.png'
+            }
+          />
         </View>
+        <Text style={styles.iDCard}>身份证 240603199004020436</Text>
+        <View style={styles.side} />
       </View>
-    );
-  }
-}
+    </View>
+  );
+};
 
 export default Mod;
