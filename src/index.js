@@ -198,12 +198,12 @@ ${renderData.style}
     panelDisplay: [
       {
         panelName: "index.tsx",
-        panelValue: tsx,
+        panelValue: option.prettier.format(tsx, prettierOpt),
         panelType: "tsx"
       },
       {
         panelName: "index.style.ts",
-        panelValue: styleText,
+        panelValue: option.prettier.format(styleText, prettierOpt),
         panelType: "ts"
       }
     ],

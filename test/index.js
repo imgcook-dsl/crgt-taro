@@ -42,8 +42,8 @@ co(function*() {
     fs.writeFileSync(path.join(__dirname, "./result.js"), prettierRes);
   } else {
     panelDisplay.forEach(function({ panelName, panelValue, panelType }) {
-      const prettierRes = prettier.format(panelValue, prettierOpt);
-      fs.writeFileSync(path.join(__dirname, "./res/" + panelName), prettierRes);
+      // const prettierRes = prettier.format(panelValue, prettierOpt);
+      fs.writeFileSync(path.join(__dirname, "./res/" + panelName), panelValue);
     });
   }
 });
