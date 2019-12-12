@@ -13,7 +13,7 @@ function getPX(value) {
   return parseFloat(value);
 }
 
-function transformPropValue(propName, propValue) {
+function transformPropValue(propName, propValue, type) {
   const isNumber = !isNaN(Number(propValue));
   const propValueJS = isNumber ? propValue : `'${propValue}'`;
   if (shouldIgnoreOnReactNativeProp.indexOf(propName) > -1) {
@@ -29,7 +29,14 @@ function transformPropValue(propName, propValue) {
     } else {
       return `fontWeight: 'bold',`;
     }
+  } else if (propName === "fontFamily") {
+    return "";
+  } else if (propName === "type") {
+    return "";
   } else {
+    if (type === "text" && propName === "width") {
+      return "";
+    }
     const isPX = shouldTranformPX(propName, propValue);
     return `${propName}: ${
       isPX ? transformPX(getPX(propValue)) : propValueJS
@@ -68,10 +75,10 @@ const shouldTransformPXStyleProp = [
  *
  * @param {React.CSSProperties} CSSProperties
  */
-function transformCSSProperties(CSSProperties) {
+function transformCSSProperties(CSSProperties, type) {
   let str = "{";
   for (let key in CSSProperties) {
-    str += transformPropValue(key, CSSProperties[key]);
+    str += transformPropValue(key, CSSProperties[key], type);
   }
 
   str += "}";
@@ -81,6 +88,7 @@ function transformCSSProperties(CSSProperties) {
 
 function transformStyle(styles) {
   let str = "";
+  const type = styles.type;
 
   for (let k in styles) {
     if (styles.hasOwnProperty(k)) {
@@ -89,7 +97,7 @@ function transformStyle(styles) {
         "export const " +
         k +
         ": React.CSSProperties = " +
-        transformCSSProperties(styles[k]) +
+        transformCSSProperties(styles[k], type) +
         ";";
     }
   }
@@ -150,7 +158,10 @@ module.exports = function(schema, option) {
       }
 
       if (className) {
-        style[className] = json.props.style;
+        style[className] = {
+          ...json.props.style,
+          type
+        };
       }
     }
 
