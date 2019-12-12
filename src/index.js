@@ -88,7 +88,6 @@ function transformCSSProperties(CSSProperties, type) {
 
 function transformStyle(styles) {
   let str = "";
-  const type = styles.type;
 
   for (let k in styles) {
     if (styles.hasOwnProperty(k)) {
@@ -97,7 +96,7 @@ function transformStyle(styles) {
         "export const " +
         k +
         ": React.CSSProperties = " +
-        transformCSSProperties(styles[k], type) +
+        transformCSSProperties(styles[k], styles[k].type) +
         ";";
     }
   }

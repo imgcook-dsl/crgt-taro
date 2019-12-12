@@ -14,7 +14,6 @@ export const zhangSan: React.CSSProperties = {
   ...(process.env.TARO_ENV !== 'rn' ? { whiteSpace: 'nowrap' } : null)
 };
 export const adult: React.CSSProperties = {
-  width: transfromPX(40),
   height: transfromPX(24),
   lineHeight: transfromPX(24),
   ...(process.env.TARO_ENV !== 'rn' ? { whiteSpace: 'nowrap' } : null),
