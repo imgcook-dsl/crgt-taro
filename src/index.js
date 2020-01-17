@@ -180,7 +180,7 @@ module.exports = function(schema, option) {
 
   renderData.modClass = `
     const mockProps = ${JSON.stringify(props)}
-    
+
     const Mod = (props = mockProps) => {
       return (
         ${jsx}
@@ -194,7 +194,7 @@ module.exports = function(schema, option) {
   const tsx = `
   import Taro from '@tarojs/taro';
   import { View, Image, Text } from '@tarojs/components';
-  import * as styles from './index.style.ts';
+  import * as styles from './index.style';
 
   ${renderData.modClass}
 
