@@ -1,101 +1,112 @@
 import transfromPX from '@utils/transfromPX';
 import React from 'react';
 
-export const zhangSan: React.CSSProperties = {
-  marginTop: transfromPX(1),
-  height: transfromPX(34),
-  fontWeight: 'bold',
-  fontSize: transfromPX(28),
-  color: '#323233',
-  lineHeight: transfromPX(34),
-  maxWidth: transfromPX(183),
-  overflow: 'hidden',
-  ...(process.env.TARO_ENV !== 'rn' ? { textOverflow: 'ellipsis' } : null),
-  ...(process.env.TARO_ENV !== 'rn' ? { whiteSpace: 'nowrap' } : null)
+export const fail: React.CSSProperties = {
+  marginTop: transfromPX(8),
+  marginLeft: transfromPX(39),
+  width: transfromPX(42),
+  height: transfromPX(41)
 };
-export const adult: React.CSSProperties = {
-  height: transfromPX(24),
-  lineHeight: transfromPX(24),
+export const title: React.CSSProperties = {
+  marginLeft: transfromPX(39),
+  height: transfromPX(48),
+  lineHeight: transfromPX(48),
   ...(process.env.TARO_ENV !== 'rn' ? { whiteSpace: 'nowrap' } : null),
-  color: '#266eff',
-  fontSize: transfromPX(20),
-  fontWeight: 'bold'
+  color: '#262626',
+  fontSize: transfromPX(34)
 };
-export const adultWrap: React.CSSProperties = {
-  ...(process.env.TARO_ENV !== 'rn' ? { boxSizing: 'border-box' } : null),
+export const bd: React.CSSProperties = {
   display: 'flex',
-  alignItems: 'center',
-  flexDirection: 'row',
-  marginLeft: transfromPX(16),
-  borderWidth: transfromPX(2),
-  borderStyle: 'solid',
-  borderColor: 'rgba(38,110,255,1.00)',
-  backgroundColor: '#f3f7ff',
-  paddingRight: transfromPX(15),
-  paddingLeft: transfromPX(14),
-  height: transfromPX(36)
+  flexDirection: 'row'
 };
-export const iconqianbi: React.CSSProperties = {
-  position: 'absolute',
-  top: transfromPX(4),
-  right: transfromPX(139),
-  width: transfromPX(14),
-  height: transfromPX(15)
-};
-export const iconunselected: React.CSSProperties = {
-  position: 'relative',
-  marginTop: transfromPX(4),
-  marginLeft: transfromPX(34),
-  width: transfromPX(28),
-  height: transfromPX(28)
-};
-export const outer: React.CSSProperties = {
-  display: 'flex',
-  position: 'relative',
-  flexDirection: 'row',
-  width: transfromPX(341),
-  height: transfromPX(36)
-};
-export const iDCard: React.CSSProperties = {
-  marginTop: transfromPX(16),
-  height: transfromPX(30),
-  fontSize: transfromPX(24),
-  color: '#b8becc',
-  lineHeight: transfromPX(30),
-  maxWidth: transfromPX(341),
+export const title_2: React.CSSProperties = {
+  maxWidth: transfromPX(737),
+  height: transfromPX(42),
   overflow: 'hidden',
   ...(process.env.TARO_ENV !== 'rn' ? { textOverflow: 'ellipsis' } : null),
-  ...(process.env.TARO_ENV !== 'rn' ? { whiteSpace: 'pre' } : null),
-  letterSpacing: transfromPX(0.29)
+  lineHeight: transfromPX(42),
+  ...(process.env.TARO_ENV !== 'rn' ? { whiteSpace: 'nowrap' } : null),
+  color: '#677187',
+  fontSize: transfromPX(30)
 };
-export const side: React.CSSProperties = {
+export const main: React.CSSProperties = {
   display: 'flex',
   flexDirection: 'row',
   justifyContent: 'center',
-  alignItems: 'flex-start',
-  width: transfromPX(38),
-  height: transfromPX(38),
-  position: 'absolute',
-  top: transfromPX(53),
-  bottom: transfromPX(53),
-  right: transfromPX(40),
-  backgroundColor: '#266eff',
-  borderRadius: transfromPX(38)
+  marginTop: transfromPX(5),
+  width: transfromPX(749)
 };
-export const primary: React.CSSProperties = {
+export const failure: React.CSSProperties = {
+  marginTop: transfromPX(10),
+  marginLeft: transfromPX(39),
+  width: transfromPX(42),
+  height: transfromPX(41)
+};
+export const title_3: React.CSSProperties = {
+  marginLeft: transfromPX(39),
+  height: transfromPX(49),
+  lineHeight: transfromPX(49),
+  ...(process.env.TARO_ENV !== 'rn' ? { whiteSpace: 'nowrap' } : null),
+  color: '#262626',
+  fontSize: transfromPX(35)
+};
+export const submain: React.CSSProperties = {
   display: 'flex',
-  flexDirection: 'column',
+  flexDirection: 'row',
+  marginTop: transfromPX(32)
+};
+export const row: React.CSSProperties = {
+  marginTop: transfromPX(5),
+  marginLeft: transfromPX(120),
+  maxWidth: transfromPX(618),
+  height: transfromPX(42),
+  overflow: 'hidden',
+  ...(process.env.TARO_ENV !== 'rn' ? { textOverflow: 'ellipsis' } : null),
+  lineHeight: transfromPX(42),
+  ...(process.env.TARO_ENV !== 'rn' ? { whiteSpace: 'nowrap' } : null),
+  color: '#677187',
+  fontSize: transfromPX(30)
+};
+export const color: React.CSSProperties = {
+  backgroundColor: '#e9e9e9',
+  width: transfromPX(685),
+  height: transfromPX(2)
+};
+export const row_2: React.CSSProperties = {
+  display: 'flex',
+  flexDirection: 'row',
   justifyContent: 'center',
-  alignItems: 'flex-start',
-  paddingLeft: transfromPX(40),
-  width: transfromPX(750),
-  height: transfromPX(146)
+  marginTop: transfromPX(45),
+  width: transfromPX(749)
+};
+export const title_4: React.CSSProperties = {
+  marginLeft: transfromPX(400),
+  maxWidth: transfromPX(301),
+  height: transfromPX(42),
+  overflow: 'hidden',
+  ...(process.env.TARO_ENV !== 'rn' ? { textOverflow: 'ellipsis' } : null),
+  lineHeight: transfromPX(42),
+  ...(process.env.TARO_ENV !== 'rn' ? { whiteSpace: 'nowrap' } : null),
+  color: '#262626',
+  fontSize: transfromPX(30)
+};
+export const PagingRight: React.CSSProperties = {
+  marginTop: transfromPX(8),
+  marginLeft: transfromPX(20),
+  width: transfromPX(16),
+  height: transfromPX(26)
+};
+export const ft: React.CSSProperties = {
+  display: 'flex',
+  flexDirection: 'row',
+  marginTop: transfromPX(27)
 };
 export const box: React.CSSProperties = {
   display: 'flex',
-  alignItems: 'center',
-  flexDirection: 'row',
-  justifyContent: 'space-between',
-  width: transfromPX(670),
-  height: transfromPX(82)
+  alignItems: 'flex-start',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  backgroundColor: '#ffffff',
+  width: transfromPX(750),
+  height: transfromPX(395)
 };

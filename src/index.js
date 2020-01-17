@@ -126,10 +126,13 @@ module.exports = function(schema, option) {
 
   function transform(json) {
     var result = "";
+    var comProps = {};
 
     if (Array.isArray(json)) {
       json.forEach(function(node) {
-        result += transform(node);
+        const res = transform(node)
+        result += res.result;
+        Object.assign(comProps, res.props);
       });
     } else if (typeof json == "object") {
       var type = json.componentName && json.componentName.toLowerCase();
@@ -138,18 +141,22 @@ module.exports = function(schema, option) {
       switch (type) {
         case "text":
           var innerText = parseProps(json.props.text);
-          result += `<Text${classString}>${innerText}</Text>`;
+          comProps[className] = innerText;
+          result += `<Text${classString}>{props.${className}}</Text>`;
           break;
 
         case "image":
           var source = parseProps(json.props.src, true);
-          result += `<Image${classString} src={${source}}  />`;
+          comProps[`${className}Img`] = source;
+          result += `<Image${classString} src={props.${className}Img}  />`;
           break;
         case "div":
         case "page":
         default:
           if (json.children && json.children.length > 0) {
-            result += `<View${classString}>${transform(json.children)}</View>`;
+            const res1 = transform(json.children);
+            Object.assign(comProps, res1.props);
+            result += `<View${classString}>${res1.result}</View>`;
           } else {
             result += `<View${classString} />`;
           }
@@ -164,14 +171,17 @@ module.exports = function(schema, option) {
       }
     }
 
-    return result;
+    return {result, props: comProps};
   }
 
+  const {result, props} = transform(schema)
   // transform json
-  var jsx = `${transform(schema)}`;
+  var jsx = `${result}`;
 
   renderData.modClass = `
-    const Mod = () => {
+    const mockProps = ${JSON.stringify(props)}
+    
+    const Mod = (props = mockProps) => {
       return (
         ${jsx}
       );
